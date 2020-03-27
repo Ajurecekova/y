@@ -10,7 +10,7 @@ for (i=0;i<ncyc;i++){
 }
 int r[n],p[n+1];
 //pole nahodnych cisel po n okrem 1
-printf("%d\n",n);
+printf("%d \n",n);
 for (j=0;j<n-1;j++){
 	do{
 	match = 0;
@@ -22,18 +22,24 @@ for (j=0;j<n-1;j++){
 	}
 	}while(match!=0);
 }
-\\vypis pola
+//vypis pola
 for(i=0;i<n-1;i++)
 	printf("%d",r[i]);
 printf("\n");
 
-\\vytvorenie cyklickej permutacie
-p[0]=r[0];
-for (i=0;i<n-2;i++)
-	p[r[i]-1]=r[i+1];
-p[r[n-2]-1] = 1;
+//vytvorenie cyklickej permutacie
+m=rand()%n;
+for(i=0;i<ncyc;i++){
+	p[m]=r[cyc[i]-2];
+	for(j=1;j<=cyc[i]-2;j++){
+		p[r[cyc[i]-j-1]-1]=r[cyc[i]-j-2];
+		a=r[cyc[i]-j-2];
+	}
+	p[a-1]=m+1;
+	m=cyc[i+1];
+}
 
-\\vypis permutacie
+//vypis permutacie
 for (j=0;j<n;j++){
 	printf("%d ",p[j]);
 }
