@@ -4,13 +4,13 @@
 
 char nahodna_permutacia_cyklickeho_typu(int *p, int *cyc, int ncyc){
 int i,j,k,n=0,m,a,b,c,match;
-printf("%d\n",ncyc);
+
 for (i=0;i<ncyc;i++){
 	n+=cyc[i];
 }
 int r[n+1];
 //pole nahodnych cisel po n okrem 1
-printf("%d \n",n);
+
 for (j=0;j<n;j++){
 	do{
 	match = 0;
@@ -45,7 +45,7 @@ for(i=0;i<ncyc;i++){
 for (j=0;j<n;j++){
 	printf("%d ",p[j]);
 }
-return(*p);	
+return 0;	
 }
 
 int main(){
