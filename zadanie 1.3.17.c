@@ -12,17 +12,16 @@ char nahodna_permutacia_cyklickeho_typu(int *p, int *cyc, int ncyc){
 	int r[n+1];
 //pole nahodnych cisel od 1 po n
 
-	for (j=0;j<n;j++){
-		do{
-            match = 0;
-            r[j]=(rand()%(n))+1;
-            for (i=0;i<j;i++){
-                if (r[i] == r[j]){
-                    match=1;
-                }
-		    }
-		}while(match!=0);
+	for (i = 0; i < n;i ++){
+	r[i]=i+1;
 	}
+
+	for (i = 0; i < n ; ++i){
+        j = rand() % (i+1);
+        b = r[i];
+        r[i] = r[j];
+        r[j] = b;
+  	}
 
 //vytvorenie cyklickej permutacie
 	m=0;
@@ -38,7 +37,7 @@ char nahodna_permutacia_cyklickeho_typu(int *p, int *cyc, int ncyc){
 		m+=cyc[i];
 	}
 
-    return 0;	
+return 0;	
 }
 
 int main(){
@@ -55,10 +54,9 @@ int main(){
 	
 	nahodna_permutacia_cyklickeho_typu(perm,cyc,ncyc);
 	
-	for (i=0,n=0;i<ncyc;i++){
+	for (i=0;i<ncyc;i++){
 		n+=cyc[i];
 	}
-
 	for (j=0;j<n;j++){
 		printf("%d ",perm[j]);
 	}
