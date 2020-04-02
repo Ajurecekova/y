@@ -54,7 +54,7 @@ int main(){
 	
 	nahodna_permutacia_cyklickeho_typu(perm,cyc,ncyc);
 	
-	for (i=0;i<ncyc;i++){
+	for (i=0,n=0;i<ncyc;i++){
 		n+=cyc[i];
 	}
 	for (j=0;j<n;j++){
