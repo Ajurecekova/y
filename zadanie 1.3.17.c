@@ -14,13 +14,13 @@ char nahodna_permutacia_cyklickeho_typu(int *p, int *cyc, int ncyc){
 
 	for (j=0;j<n;j++){
 		do{
-		match = 0;
-		r[j]=(rand()%(n))+1;
-		for (i=0;i<j;i++){
-			if (r[i] == r[j]){
-				match=1;
-			}
-		}
+            match = 0;
+            r[j]=(rand()%(n))+1;
+            for (i=0;i<j;i++){
+                if (r[i] == r[j]){
+                    match=1;
+                }
+		    }
 		}while(match!=0);
 	}
 
@@ -38,7 +38,7 @@ char nahodna_permutacia_cyklickeho_typu(int *p, int *cyc, int ncyc){
 		m+=cyc[i];
 	}
 
-return 0;	
+    return 0;	
 }
 
 int main(){
@@ -58,6 +58,7 @@ int main(){
 	for (i=0;i<ncyc;i++){
 		n+=cyc[i];
 	}
+
 	for (j=0;j<n;j++){
 		printf("%d ",perm[j]);
 	}
